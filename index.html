@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lucas Henrique Sales Santos — Data Analyst</title>
-<meta name="description" content="Analista de Dados especializado em transformar dados complexos em decisões estratégicas de negócio." />
+<meta name="description" content="Analista de Dados em formação pela TripleTen, especializado em transformar dados complexos em decisões estratégicas de negócio." />
 <meta name="author" content="Lucas Henrique Sales Santos" />
 <meta property="og:title" content="Lucas Henrique Sales Santos — Data Analyst" />
-<meta property="og:description" content="Cases, metodologias e resultados em análise de dados." />
+<meta property="og:description" content="Cases reais, metodologias e resultados em análise de dados." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,10 +250,10 @@
   .case{
     display:grid;grid-template-columns:80px 1fr auto;gap:32px;
     padding:40px 0;border-bottom:1px solid var(--border);
-    align-items:start;transition:.3s;cursor:pointer;
+    align-items:start;transition:.3s;
   }
-  .case:hover{padding-left:16px}
-  .case:hover .case-arrow{transform:translateX(8px);color:var(--accent)}
+  .case[style*="cursor: pointer"]:hover{padding-left:16px}
+  .case[style*="cursor: pointer"]:hover .case-arrow{transform:translateX(8px);color:var(--accent)}
   @media(max-width:768px){.case{grid-template-columns:1fr;gap:16px}}
   .case-number{
     font-family:var(--font-mono);font-size:13px;
@@ -306,22 +306,31 @@
   .method-item p{font-size:14px;color:var(--muted);line-height:1.6}
 
   /* CERTIFICATIONS */
-  .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:60px}
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:60px}
   .cert{
     background:var(--surface);border:1px solid var(--border);
-    border-radius:10px;padding:24px;transition:.3s;
+    border-radius:12px;padding:28px;transition:.3s;
+    display:flex;flex-direction:column;justify-content:space-between;
   }
   .cert:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+  .cert.featured{
+    border-color:var(--accent);
+    background:linear-gradient(135deg, var(--surface), rgba(214,51,132,.05));
+  }
   .cert-issuer{
     font-family:var(--font-mono);font-size:11px;
-    color:var(--accent);text-transform:uppercase;letter-spacing:1px;
-    margin-bottom:8px;
+    color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;
+    margin-bottom:12px;font-weight:600;
   }
   .cert-title{
-    font-family:var(--font-display);font-size:1rem;
-    font-weight:600;margin-bottom:6px;color:var(--text-2);
+    font-family:var(--font-display);font-size:1.15rem;
+    font-weight:700;margin-bottom:8px;color:var(--text-2);
   }
-  .cert-date{font-size:12px;color:var(--muted)}
+  .cert-desc{font-size:13px;color:var(--muted);line-height:1.6}
+  .cert-date{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted-2);
+    margin-top:16px;padding-top:16px;border-top:1px solid var(--border);
+  }
 
   /* CONTACT */
   .contact{
@@ -395,7 +404,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#about">Sobre</a>
         <a href="#expertise">Expertise</a>
-        <a href="#cases">Cases</a>
+        <a href="#cases">Projetos</a>
         <a href="#methodology">Metodologia</a>
         <a href="#contact">Contato</a>
       </div>
@@ -415,7 +424,7 @@
     <h1>Analista de Dados especializado em <em>decisões estratégicas</em> baseadas em evidências.</h1>
     <p class="hero-sub">Transformo dados complexos em insights acionáveis. Combino rigor analítico com visão de negócio para gerar impacto mensurável em organizações data-driven.</p>
     <div class="hero-cta">
-      <a href="#cases" class="btn btn-primary">Ver Cases →</a>
+      <a href="#cases" class="btn btn-primary">Ver Projetos →</a>
       <a href="https://www.linkedin.com/in/lucash-sales" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
       <a href="mailto:lucashs.sales@gmail.com" class="btn btn-ghost">E-mail</a>
     </div>
@@ -423,19 +432,19 @@
     <div class="hero-metrics">
       <div class="metric">
         <div class="value">14</div>
-        <div class="label">Projetos entregues</div>
+        <div class="label">Sprints de Formação</div>
       </div>
       <div class="metric">
         <div class="value">+500h</div>
-        <div class="label">Formação técnica</div>
-      </div>
-      <div class="metric">
-        <div class="value">5</div>
-        <div class="label">Certificações</div>
+        <div class="label">Prática Intensiva</div>
       </div>
       <div class="metric">
         <div class="value">100%</div>
-        <div class="label">Foco em dados</div>
+        <div class="label">Foco em Projetos Reais</div>
+      </div>
+      <div class="metric">
+        <div class="value">∞</div>
+        <div class="label">Curiosidade Técnica</div>
       </div>
     </div>
   </div>
@@ -449,20 +458,19 @@
     
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>Sou Analista de Dados em formação pelo bootcamp <strong>TripleTen</strong>, com foco em transformar problemas de negócio em soluções analíticas end-to-end — da extração à visualização.</p>
+        <p>Sou Analista de Dados em formação pelo bootcamp intensivo da <strong>TripleTen</strong>, com foco em transformar problemas de negócio em soluções analíticas end-to-end — da extração à visualização.</p>
         <p>Minha abordagem combina <strong>rigor técnico</strong> (Python, SQL, estatística) com <strong>visão estratégica</strong> (KPIs, unit economics, storytelling). Acredito que o valor de uma análise não está na complexidade do modelo, mas na qualidade da decisão que ela possibilita.</p>
-        <p>Atualmente em transição de carreira, busco minha primeira oportunidade formal para aplicar metodologias analíticas em problemas reais de negócio, contribuindo para times que valorizam curiosidade intelectual e execução consistente.</p>
+        <p>Busco minha primeira oportunidade formal para aplicar metodologias analíticas em problemas reais de negócio, contribuindo para times que valorizam curiosidade intelectual, aprendizado contínuo e execução consistente.</p>
       </div>
 
       <div class="about-aside reveal">
-        <h3>Áreas de Foco</h3>
+        <h3>Áreas de Foco Atual</h3>
         <ul class="focus-list">
-          <li>Análise Exploratória <span class="level">Avançado</span></li>
-          <li>SQL & Modelagem <span class="level">Intermediário</span></li>
+          <li>Análise Exploratória (EDA) <span class="level">Avançado</span></li>
+          <li>SQL & Modelagem de Dados <span class="level">Intermediário</span></li>
           <li>Visualização & Storytelling <span class="level">Intermediário</span></li>
           <li>Estatística Aplicada <span class="level">Intermediário</span></li>
-          <li>Automação & ETL <span class="level">Fundamentos</span></li>
-          <li>Machine Learning <span class="level">Em formação</span></li>
+          <li>Automação de Pipelines <span class="level">Fundamentos</span></li>
         </ul>
       </div>
     </div>
@@ -473,7 +481,7 @@
 <section id="expertise" style="background:var(--bg-2)">
   <div class="container">
     <div class="section-label reveal">02 — Expertise Técnica</div>
-    <h2 class="section-title reveal">Stack construída ao longo de 14 sprints de formação intensiva.</h2>
+    <h2 class="section-title reveal">Stack construída ao longo de sprints de formação intensiva e prática constante.</h2>
     <p class="section-sub reveal">Ferramentas e metodologias que utilizo para extrair, transformar e comunicar insights.</p>
 
     <div class="expertise-grid reveal">
@@ -552,89 +560,26 @@
   </div>
 </section>
 
-<!-- CASES -->
+<!-- CASES (DINÂMICO VIA GITHUB API) -->
 <section id="cases">
   <div class="container">
-    <div class="section-label reveal">03 — Cases Selecionados</div>
-    <h2 class="section-title reveal">Projetos que demonstram minha abordagem analítica.</h2>
-    <p class="section-sub reveal">Cada case representa um problema real resolvido com método, rigor e foco em resultado de negócio.</p>
+    <div class="section-label reveal">03 — Projetos em Destaque</div>
+    <h2 class="section-title reveal">Cases desenvolvidos durante minha formação.</h2>
+    <p class="section-sub reveal">Projetos práticos que demonstram minha evolução técnica e capacidade de resolver problemas reais com dados. Atualizados automaticamente via GitHub.</p>
 
-    <div class="cases-list">
-      <a href="case-churn.html" class="case reveal">
-        <div class="case-number">01</div>
+    <div class="cases-list" id="casesList">
+      <!-- Placeholder inicial -->
+      <div class="case reveal" style="opacity: 0.6;">
+        <div class="case-number">00</div>
         <div class="case-content">
-          <h3>Análise de Churn em E-commerce</h3>
-          <p>Identificação de padrões de churn através de clusterização K-Means e construção de dashboard preditivo para o time comercial. Redução de 23% na taxa de churn após implementação das ações.</p>
-          <div class="case-metrics">
-            <div class="case-metric"><span class="val">↓ 23%</span><span class="lbl">churn rate</span></div>
-            <div class="case-metric"><span class="val">R$ 120k</span><span class="lbl">receita preservada</span></div>
-            <div class="case-metric"><span class="val">14 dias</span><span class="lbl">antecedência</span></div>
-          </div>
+          <h3>Projetos em Desenvolvimento</h3>
+          <p>Novos projetos serão adicionados automaticamente conforme forem publicados no GitHub com a tag <strong>portfolio-project</strong>. Em breve: Projeto Integrado 1 (Sprint 6).</p>
           <div class="case-tags">
-            <span class="case-tag">Python</span>
-            <span class="case-tag">K-Means</span>
-            <span class="case-tag">Power BI</span>
-            <span class="case-tag">SQL</span>
+            <span class="case-tag">Em Breve</span>
           </div>
         </div>
-        <div class="case-arrow">→</div>
-      </a>
-
-      <a href="#" class="case reveal">
-        <div class="case-number">02</div>
-        <div class="case-content">
-          <h3>Dashboard de Vendas Multi-canal</h3>
-          <p>Consolidação de 3 canais de venda com métricas desencontradas em uma única fonte da verdade. Automação do ETL e modelo estrela no Power BI, economizando 4h semanais do time comercial.</p>
-          <div class="case-metrics">
-            <div class="case-metric"><span class="val">↓ 4h</span><span class="lbl">/semana em reportes</span></div>
-            <div class="case-metric"><span class="val">3</span><span class="lbl">canais unificados</span></div>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">Python</span>
-            <span class="case-tag">ETL</span>
-            <span class="case-tag">Power BI</span>
-            <span class="case-tag">Modelagem</span>
-          </div>
-        </div>
-        <div class="case-arrow">→</div>
-      </a>
-
-      <a href="#" class="case reveal">
-        <div class="case-number">03</div>
-        <div class="case-content">
-          <h3>Otimização de Queries SQL</h3>
-          <p>Refatoração de query crítica de relatório que levava 12 minutos para executar. Aplicação de CTEs, índices compostos e análise de plano de execução, reduzindo tempo para 1min30s.</p>
-          <div class="case-metrics">
-            <div class="case-metric"><span class="val">↓ 87%</span><span class="lbl">tempo de execução</span></div>
-            <div class="case-metric"><span class="val">12min → 90s</span><span class="lbl">performance</span></div>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">PostgreSQL</span>
-            <span class="case-tag">Performance</span>
-            <span class="case-tag">EXPLAIN</span>
-          </div>
-        </div>
-        <div class="case-arrow">→</div>
-      </a>
-
-      <a href="#" class="case reveal">
-        <div class="case-number">04</div>
-        <div class="case-content">
-          <h3>Monitoramento de Preços via Web Scraping</h3>
-          <p>Construção de pipeline automatizado para monitorar 2.500+ SKUs da concorrência em tempo real, gerando relatórios semanais para o time de pricing.</p>
-          <div class="case-metrics">
-            <div class="case-metric"><span class="val">2.500+</span><span class="lbl">SKUs monitorados</span></div>
-            <div class="case-metric"><span class="val">100%</span><span class="lbl">automatizado</span></div>
-          </div>
-          <div class="case-tags">
-            <span class="case-tag">Python</span>
-            <span class="case-tag">BeautifulSoup</span>
-            <span class="case-tag">Pandas</span>
-            <span class="case-tag">Automação</span>
-          </div>
-        </div>
-        <div class="case-arrow">→</div>
-      </a>
+        <div class="case-arrow">⏳</div>
+      </div>
     </div>
   </div>
 </section>
@@ -673,43 +618,39 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- FORMATION (APENAS TRIPLETEN + PRÁTICA) -->
 <section id="certifications">
   <div class="container">
     <div class="section-label reveal">05 — Formação</div>
-    <h2 class="section-title reveal">Certificações e formação contínua.</h2>
-    <p class="section-sub reveal">Compromisso com aprendizado consistente e validado.</p>
+    <h2 class="section-title reveal">Base técnica sólida e aprendizado contínuo.</h2>
+    <p class="section-sub reveal">Foco em formação intensiva, prática orientada a projetos e atualização constante.</p>
 
     <div class="certs-grid">
-      <div class="cert reveal">
-        <div class="cert-issuer">TripleTen</div>
-        <div class="cert-title">Data Analyst Bootcamp</div>
+      <div class="cert featured reveal">
+        <div>
+          <div class="cert-issuer">TripleTen</div>
+          <div class="cert-title">Data Analyst Bootcamp</div>
+          <div class="cert-desc">Formação intensiva e prática com foco em Python, SQL, Estatística, Visualização de Dados e Resolução de Problemas de Negócio. Inclui 3 projetos integrados avaliados por code review.</div>
+        </div>
         <div class="cert-date">2025 — 2026 · 14 Sprints</div>
       </div>
+
       <div class="cert reveal">
-        <div class="cert-issuer">Google</div>
-        <div class="cert-title">Data Analytics Certificate</div>
-        <div class="cert-date">Coursera · 2025</div>
+        <div>
+          <div class="cert-issuer">Prática Autônoma</div>
+          <div class="cert-title">Projetos Pessoais & Estudos</div>
+          <div class="cert-desc">Desenvolvimento de projetos práticos, participação em comunidades de dados e estudo contínuo de novas bibliotecas e técnicas de análise.</div>
+        </div>
+        <div class="cert-date">Contínuo</div>
       </div>
+
       <div class="cert reveal">
-        <div class="cert-issuer">Microsoft</div>
-        <div class="cert-title">Power BI Data Analyst</div>
-        <div class="cert-date">PL-300 · Em preparação</div>
-      </div>
-      <div class="cert reveal">
-        <div class="cert-issuer">IBM</div>
-        <div class="cert-title">Data Science Professional</div>
-        <div class="cert-date">Coursera · 2025</div>
-      </div>
-      <div class="cert reveal">
-        <div class="cert-issuer">Alura</div>
-        <div class="cert-title">SQL & Python para Dados</div>
-        <div class="cert-date">Formação · 2024</div>
-      </div>
-      <div class="cert reveal">
-        <div class="cert-issuer">Kaggle</div>
-        <div class="cert-title">Intro to Machine Learning</div>
-        <div class="cert-date">Micro-course · 2025</div>
+        <div>
+          <div class="cert-issuer">Comunidade de Dados</div>
+          <div class="cert-title">Networking & Code Reviews</div>
+          <div class="cert-desc">Participação ativa em comunidades de dados, code reviews colaborativos e troca de conhecimento sobre melhores práticas de mercado.</div>
+        </div>
+        <div class="cert-date">Contínuo</div>
       </div>
     </div>
   </div>
@@ -779,7 +720,7 @@
 </div>
 
 <script>
-  // THEME
+  // ============ THEME TOGGLE ============
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   const savedTheme = localStorage.getItem('theme');
@@ -788,16 +729,16 @@
     const next = html.getAttribute('data-theme')==='dark'?'light':'dark';
     html.setAttribute('data-theme',next);
     localStorage.setItem('theme',next);
-    themeToggle.textContent = next==='light'?'◑':'◐';
+    themeToggle.textContent = next==='light'?'◑':'';
   });
 
-  // MENU
+  // ============ MOBILE MENU ============
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-  // COOKIE BANNER
+  // ============ COOKIE BANNER ============
   const cookieBanner = document.getElementById('cookieBanner');
   const acceptBtn = document.getElementById('acceptCookies');
   const rejectBtn = document.getElementById('rejectCookies');
@@ -817,7 +758,7 @@
   acceptBtn.addEventListener('click', ()=>{ localStorage.setItem('cookiesAccepted', 'true'); cookieBanner.classList.remove('show'); applyConsent(true); });
   rejectBtn.addEventListener('click', ()=>{ localStorage.setItem('cookiesAccepted', 'false'); cookieBanner.classList.remove('show'); applyConsent(false); });
 
-  // TRACKING
+  // ============ EVENT TRACKING ============
   function trackEvent(name, label){
     if(typeof gtag !== 'function' || localStorage.getItem('cookiesAccepted') !== 'true') return;
     gtag('event', name, { 'event_category': 'engagement', 'event_label': label });
@@ -826,11 +767,96 @@
   document.querySelectorAll('a[href*="github"]').forEach(el=>{ el.addEventListener('click', ()=> trackEvent('click_github', el.href)); });
   document.querySelectorAll('a[href*="curriculo"], a[href*="resume"]').forEach(el=>{ el.addEventListener('click', ()=> trackEvent('download_cv', 'Curriculum Vitae')); });
 
-  // REVEAL
+  // ============ REVEAL ANIMATION ============
   const revealObserver = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}});
   },{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+  // ============ GITHUB API - LOAD PROJECTS DYNAMICALLY ============
+  async function loadProjects() {
+    try {
+      const response = await fetch('https://api.github.com/users/Lucasalees3/repos?sort=updated&per_page=20');
+      if (!response.ok) throw new Error('Falha ao carregar repositórios');
+      const repos = await response.json();
+      
+      // Filtrar repositórios que tenham a tag 'portfolio-project' OU que contenham palavras-chave no nome
+      const portfolioRepos = repos.filter(repo => 
+        (repo.topics && repo.topics.includes('portfolio-project')) || 
+        repo.name.toLowerCase().includes('case') || 
+        repo.name.toLowerCase().includes('projeto') ||
+        repo.name.toLowerCase().includes('project') ||
+        repo.name.toLowerCase().includes('dashboard') ||
+        repo.name.toLowerCase().includes('analysis') ||
+        repo.name.toLowerCase().includes('analise')
+      );
+
+      const casesList = document.getElementById('casesList');
+      
+      if (portfolioRepos.length > 0) {
+        casesList.innerHTML = ''; // Remove o placeholder
+        
+        portfolioRepos.forEach((repo, index) => {
+          const caseElement = createCaseElement(repo, index + 1);
+          casesList.appendChild(caseElement);
+          // Re-observar para animação
+          revealObserver.observe(caseElement);
+        });
+      }
+    } catch (error) {
+      console.error('Erro ao carregar projetos:', error);
+      // Mantém o placeholder em caso de erro
+    }
+  }
+
+  function createCaseElement(repo, number) {
+    const div = document.createElement('div');
+    div.className = 'case reveal';
+    div.style.cursor = 'pointer';
+    div.onclick = () => window.open(repo.html_url, '_blank');
+    
+    // Formatar nome: remover hífens, prefixos comuns e capitalizar
+    let displayName = repo.name
+      .replace(/-/g, ' ')
+      .replace(/case|projeto|project|dashboard|analysis|analise/gi, '')
+      .trim();
+    // Capitalizar primeira letra de cada palavra
+    displayName = displayName.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+      .trim();
+    
+    // Se ficou vazio após remover prefixos, usar o nome original
+    if (!displayName) displayName = repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    
+    // Extrair tags dos tópicos do repositório (máximo 4)
+    const topics = (repo.topics && repo.topics.length > 0) ? repo.topics.slice(0, 4) : [];
+    const tags = topics.map(topic => 
+      `<span class="case-tag">${topic}</span>`
+    ).join('');
+    
+    // Fallback: se não tiver tópicos, usar linguagem
+    const fallbackTags = !tags ? `<span class="case-tag">${repo.language || 'GitHub'}</span>` : '';
+
+    div.innerHTML = `
+      <div class="case-number">${String(number).padStart(2, '0')}</div>
+      <div class="case-content">
+        <h3>${displayName}</h3>
+        <p>${repo.description || 'Projeto desenvolvido durante o bootcamp TripleTen. Clique para ver detalhes e código-fonte no GitHub.'}</p>
+        ${repo.language ? `<div class="case-metrics"><div class="case-metric"><span class="val">${repo.language}</span></div></div>` : ''}
+        <div class="case-tags">
+          ${tags || fallbackTags}
+          <span class="case-tag">Ver no GitHub →</span>
+        </div>
+      </div>
+      <div class="case-arrow">→</div>
+    `;
+    
+    return div;
+  }
+
+  // Carregar projetos quando a página carregar
+  document.addEventListener('DOMContentLoaded', loadProjects);
 </script>
 
 </body>
