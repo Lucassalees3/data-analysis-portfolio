@@ -6,9 +6,23 @@
 <title>Lucas Henrique Sales Santos — Data Analyst</title>
 <meta name="description" content="Analista de Dados em formação pela TripleTen, especializado em transformar dados complexos em decisões estratégicas de negócio." />
 <meta name="author" content="Lucas Henrique Sales Santos" />
+
+<!-- Open Graph / LinkedIn / Facebook -->
 <meta property="og:title" content="Lucas Henrique Sales Santos — Data Analyst" />
-<meta property="og:description" content="Cases reais, metodologias e resultados em análise de dados." />
+<meta property="og:description" content="Portfólio de Análise de Dados. Projetos práticos de Python, SQL e Power BI desenvolvidos no bootcamp TripleTen." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://lucassalees3.github.io/data-analysis-portfolio/" />
+<meta property="og:image" content="https://lucassalees3.github.io/data-analysis-portfolio/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Lucas Sales — Data Analyst Portfolio" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lucas Henrique Sales Santos — Data Analyst" />
+<meta name="twitter:description" content="Portfólio de Análise de Dados. Projetos práticos de Python, SQL e Power BI." />
+<meta name="twitter:image" content="https://lucassalees3.github.io/data-analysis-portfolio/og-image.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -700,7 +714,6 @@
 </div>
 
 <script>
-  // ============ THEME TOGGLE ============
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   const savedTheme = localStorage.getItem('theme');
@@ -709,16 +722,14 @@
     const next = html.getAttribute('data-theme')==='dark'?'light':'dark';
     html.setAttribute('data-theme',next);
     localStorage.setItem('theme',next);
-    themeToggle.textContent = next==='light'?'':'◐';
+    themeToggle.textContent = next==='light'?'◑':'◐';
   });
 
-  // ============ MOBILE MENU ============
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-  // ============ COOKIE BANNER ============
   const cookieBanner = document.getElementById('cookieBanner');
   const acceptBtn = document.getElementById('acceptCookies');
   const rejectBtn = document.getElementById('rejectCookies');
@@ -738,7 +749,6 @@
   acceptBtn.addEventListener('click', ()=>{ localStorage.setItem('cookiesAccepted', 'true'); cookieBanner.classList.remove('show'); applyConsent(true); });
   rejectBtn.addEventListener('click', ()=>{ localStorage.setItem('cookiesAccepted', 'false'); cookieBanner.classList.remove('show'); applyConsent(false); });
 
-  // ============ EVENT TRACKING ============
   function trackEvent(name, label){
     if(typeof gtag !== 'function' || localStorage.getItem('cookiesAccepted') !== 'true') return;
     gtag('event', name, { 'event_category': 'engagement', 'event_label': label });
@@ -747,21 +757,17 @@
   document.querySelectorAll('a[href*="github"]').forEach(el=>{ el.addEventListener('click', ()=> trackEvent('click_github', el.href)); });
   document.querySelectorAll('a[href*="curriculo"], a[href*="resume"]').forEach(el=>{ el.addEventListener('click', ()=> trackEvent('download_cv', 'Curriculum Vitae')); });
 
-  // ============ REVEAL ANIMATION ============
   const revealObserver = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}});
   },{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
-  // ============ GITHUB API - LOAD PROJECTS FROM datanalysis-projects ============
   async function loadProjects() {
     try {
-      // Busca o conteúdo da raiz do repositório datanalysis-projects
       const response = await fetch('https://api.github.com/repos/Lucasalees3/datanalysis-projects/contents');
       if (!response.ok) throw new Error('Falha ao carregar projetos');
       const contents = await response.json();
       
-      // Filtra apenas pastas (diretórios) que são projetos
       const projectFolders = contents.filter(item => 
         item.type === 'dir' && 
         !item.name.startsWith('.') &&
@@ -773,7 +779,7 @@
       const casesList = document.getElementById('casesList');
       
       if (projectFolders.length > 0) {
-        casesList.innerHTML = ''; // Remove o placeholder
+        casesList.innerHTML = '';
         
         projectFolders.forEach((folder, index) => {
           const caseElement = createCaseElementFromFolder(folder, index + 1);
@@ -783,7 +789,6 @@
       }
     } catch (error) {
       console.error('Erro ao carregar projetos:', error);
-      // Mantém o placeholder em caso de erro
     }
   }
 
@@ -792,7 +797,6 @@
     div.className = 'case reveal clickable';
     div.onclick = () => window.open(folder.html_url, '_blank');
     
-    // Formatar nome: remover hífens e capitalizar
     let displayName = folder.name
       .replace(/-/g, ' ')
       .replace(/\b\w/g, l => l.toUpperCase())
@@ -814,7 +818,6 @@
     return div;
   }
 
-  // Carregar projetos quando a página carregar
   document.addEventListener('DOMContentLoaded', loadProjects);
 </script>
 
